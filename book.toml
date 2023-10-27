@@ -1,0 +1,6 @@
+[book]
+authors = ["Shloon"]
+language = "he"
+multilingual = false
+src = "src"
+title = "מדריך טייפסטינג"

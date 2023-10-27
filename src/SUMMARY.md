@@ -5,6 +5,8 @@
 
 # מבוא ל-Typesetting
 
+- [מבוא לטייפסטינג](./intro-to-typesetting.md)
+
 # עיצוב טקסט ב-Aegisub
 
 - [מבוא ל-Aegisub ופורמט ASS]()

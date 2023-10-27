@@ -12,9 +12,9 @@
 הספר משתמש ב-`mdbook`,
 פלטפורמה הכתובה מעל Rust
 המאפשרת יצירה של ספרים מקבצי Markdown.
-אנו משתמשים בגרסא יחסית עדכנית של `mdbook` לבניית הספר.
+אנו משתמשים בגרסא 0.4.35 של `mdbook` לבניית הספר.
 אתם יכולים להוריד את `mdbook`
-[מהשחרורים הרשמיים ב-Github](https://github.com/rust-lang/mdBook/releases/),
+[מהשחרורים הרשמיים ב-Github](https://github.com/rust-lang/mdBook/releases/tag/v0.4.35),
 דרך מנהל החבילות שלכם
 (למשל, `scoop` בחלונות,
 `apt-get` באובונטו,
@@ -33,7 +33,7 @@
 
 למשל, אם אתם משתמשים ב-Scoop:
 ```sh
-scoop install mdbook
+scoop install mdbook@0.4.35
 git clone https://github.com/cN3rd/typesetting-book.git
 cd typesetting-book
 mdbook serve

@@ -1,7 +1,7 @@
 # Summary
 
 - [הקדמה](preface.md)
-- [לפני שמתחילים...]()
+- [לפני שמתחילים...](before_we_begin.md)
 
 # מבוא ל-Typesetting
 

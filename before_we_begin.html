@@ -1,0 +1,303 @@
+<!DOCTYPE HTML>
+<html lang="he" class="light" dir="rtl">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>לפני שמתחילים... - מדריך טייפסטינג</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="preface.html"><strong aria-hidden="true">1.</strong> הקדמה</a></li><li class="chapter-item expanded "><a href="before_we_begin.html" class="active"><strong aria-hidden="true">2.</strong> לפני שמתחילים...</a></li><li class="chapter-item expanded affix "><li class="part-title">מבוא ל-Typesetting</li><li class="chapter-item expanded "><a href="intro-to-typesetting.html"><strong aria-hidden="true">3.</strong> מבוא לטייפסטינג</a></li><li class="chapter-item expanded affix "><li class="part-title">עיצוב טקסט ב-Aegisub</li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> מבוא ל-Aegisub ופורמט ASS</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> יצירה ועריכת Styles</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> תגי ASS בסיסיים</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> מיקום שלטים</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Typesets בכמה שכבות</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> עיצוב טקסט מתקדם - מסכות וצורות</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> מעקב תנועה עם Mocha Pro</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.</strong> עבודה עם סקריפטים</div></li><li class="chapter-item expanded affix "><li class="part-title">עיצוב טקסט ב-After Effects</li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> למה דווקא After Effects?</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.</strong> אופן העבודה הבסיסי.</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">14.</strong> מבוא קצר ל-After Effects.</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">15.</strong> טקסט עברי ב-After Effects.</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">16.</strong> מעקב תנועה</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">17.</strong> טקסטורות ואפקטים בסיסיים</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">18.</strong> מסכות ופרספקטיבות</div></li><li class="spacer"></li><li class="chapter-item expanded "><a href="glossary.html"><strong aria-hidden="true">19.</strong> מונחון</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">מדריך טייפסטינג</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="לפני-שמתחילים"><a class="header" href="#לפני-שמתחילים">לפני שמתחילים...</a></h1>
+<p>להלן כמה דברים שאני לא יודע איפה להכניס אותם אבל שווה להתייחס אליהם.</p>
+<h2 id="חומרה-מומלצת"><a class="header" href="#חומרה-מומלצת">חומרה מומלצת</a></h2>
+<p>בעיקרון, אפשר &quot;לעשות טייפ&quot; עם כל מחשב מודרני
+(מחמש השנים האחרונות ואף יותר).
+להלן מפרט <strong>מינימלי</strong> עבור טייפסטינג.
+שימו לב שהרצה של תוכנות כמו
+After Effects, Photoshop, Illustrator, Mocha Pro וכו'
+דורשת חומרה חזקה יותר, שאת המפרט המומלץ לה אציג ליד.</p>
+<ul>
+<li>
+<p><strong>מערכת הפעלה:</strong> Windows 7 לפחות, בווריאנט ה-64 ביט.</p>
+</li>
+<li>
+<p><strong>מסך:</strong> IPS 1080p לפחות. רזולוציה גדולה יותר מומלצת.</p>
+</li>
+<li>
+<p><strong>מעבד:</strong> 2 ליבות עם תדר מקסימלי של לפחות 2.5Ghz (מעבד 4 ליבות עם תדר מקסימלי של לפחות 3Ghz מומלץ)</p>
+</li>
+<li>
+<p><strong>זיכרון:</strong> 8GB ראם לפחות, 16GB מומלצים.</p>
+<ul>
+<li>Aegisub יכולה לטעון את הווידאו לזיכרון, דבר שלוקח כמה ג'יגה-בייטים.</li>
+<li>Windows טוענת את כל הפונטים לזיכרון בעת עליית המערכת, ולכן גם הפונטים עצמם יכולים לתפוס כמה ג'יגה-בייטים בודדים, בייחוד כאשר ישנם המון גופנים.</li>
+<li>After effects משתמשת בכל זיכרון המערכת הזמין לה כדי לשמור previews של טייפים, וככל שיש יותר זיכרון, כך After effects יכולה לשמור יותר וידאו במטמון.</li>
+</ul>
+</li>
+<li>
+<p><strong>שטח אחסון:</strong> לפחות 220GB של אחסון אם כי יותר מומלצים,
+שכן חיתוכי ווידאו שנעשה ל-After Effects
+מאוד גדולים, ויכולים להגיע לכ-1GB לדקת סרטון. 
+מומלץ שחלק מהשטח יהיה על SSD ויוקצה לזיכרון הדיסק של After Effects,
+אך את ה-Typecuts עצמם אפשר לאחסן על HDD.</p>
+</li>
+<li>
+<p><strong>עכבר:</strong> דרוש. אל תנסו לעצב עם טאצ'פד או עם מסך מגע. הדיוק הנדרש ידון אתכם לכישלון.</p>
+</li>
+<li>
+<p><strong>אינטרנט:</strong> עדיף כמה שיותר מהיר, אבל אפשר לעבוד עם לפחות 25Mbps הורדה ו-5Mbps העלאה.</p>
+</li>
+</ul>
+<h3 id="מילה-על-טאבלטי-ציור"><a class="header" href="#מילה-על-טאבלטי-ציור">מילה על טאבלטי ציור</a></h3>
+<p>בעולם העיצוב והציור הדיגיטלי, טאבלטי ציור (drawing tablets)
+הם כלי הכרחי ואף מומלץ לכל מעצב שרוצה לשדרג את היכולות שלו.
+עבור מעצבי דפוס,
+אגיד בכנות,
+טאבלטי ציור הם לחלוטין overkill.
+עם זאת,
+ישנם טייפסטרים המשתמשים בטאבלטי ציור
+על מנת לעצב טקסטים שונים
+או להתאים רקעים עבור טייפים ספציפיים,
+למשל
+כאשר רוצים להתאים את הטקסט עבור כתב יד ספציפי,
+או במקרים שבהם נרצה לעצב הרחבות לשלטים בסצנה.</p>
+<p><img src="/images/usgai-drop-custom-drawing-01.png" alt="" />
+<em>דוגמא להתאמת טקסט עבור כתב יד ספציפי
+(דמעת הארנבת, פרק 4)</em></p>
+<p><img src="/images/usgai-drop-custom-drawing-04.png" alt="" />
+<em>דוגמא לתוספת שעיצבנו לשלט קיים
+(דמעת הארנבת, פרק 4)</em></p>
+<p>יש שני סוגים של טאבלטי ציור:
+<strong>Pen Tablets</strong>, שהם <em>משטחים</em> מיוחדים שאפשר לכתוב עליהם עם עט
+(כגון Wacom Intous, Huion Inspiory, XP-Pen Deco),
+ו-<strong>Pen Displays</strong>, שהם <em>מסכים</em> מיוחדים שאפשר לכתוב עליהם עם עט
+(כגון Wacom Cintiq, Huion Jamvas, XP-Pen Artist Pro).</p>
+<p>המשטחים זולים משמעותיים מהמסכים היעודיים
+ויכולים להוות דרך לא יקרה להתנסות בציור דיגיטלי עם כלים מקצועיים.
+עם זאת,
+עבודה עם המשטחים האלו דורשת מידה מסוימת של קורדינציית עין-מסך,
+שלה עקומת לימוד מסוימת.
+לעומתם,
+המסכים מספקים דרך אינטואיטיבית לציור במחשב, אך יכולים להגיע לעלות גבוהה מאוד.
+המסכים גם יכולים לתפוס הרבה מקום ולא להיות ניידים.</p>
+<p>שימו לב שזה שממש אבל ממש לא צריך להשקיע כסף בטאבלט כדי להגיע לתוצאות יפות,
+וזה לא הופך אתכם אוטומטית לטייפסטרים טובים יותר.
+לדעתי, 
+כל עוד יש את התפיסה של עקרונות העיצוב המתאימים,
+טייפסטינג יפה אפשר ליצור גם עם עכבר, מקלדת וגופנים מתאימים.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="preface.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="intro-to-typesetting.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="preface.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="intro-to-typesetting.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

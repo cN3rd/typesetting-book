@@ -501,32 +501,104 @@ After Effects, Photoshop, Illustrator, Mocha Pro וכו'
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="מונחון"><a class="header" href="#מונחון">מונחון</a></h1>
 <h2 id="כללי"><a class="header" href="#כללי">כללי</a></h2>
-<ul>
-<li><strong>עיצוב דפוס (Typesetting\טייפסטינג)</strong> - 
+<p><strong>עיצוב דפוס (Typesetting\טייפסטינג)</strong>: <br />
 אמנות עיצוב הטקסט.
-בהקשר של פנסאב, עיצוב שלטים, לוגואים וכו'.</li>
-<li><strong>טייפ (Type)</strong> - 
+בהקשר של פנסאב, עיצוב שלטים, לוגואים וכו'.</p>
+<p><strong>טייפ (Type)</strong>: <br />
 סלנג לעיצוב יחיד.
 יכול להתייחס לעיצוב עצמו מבחינה קונספטואלית,
 לכלל העיצובים בפרק,
 או לעיצוב הסופי אם מייצאים אותו מתוכנות כגון
-After Effects או Photoshop</li>
-<li><strong>חיתוך (TypeCut)</strong> -
+After Effects או Photoshop.</p>
+<p><strong>חיתוך (TypeCut)</strong>: <br />
 וידאו\תמונה גולמית שחתכנו
 מה-Raw של הפרק
-ועליו נעצב את הטייפ</li>
-</ul>
+ועליו נעצב את הטייפ.</p>
+<h2 id="מושגים-בוידאו-ועיבוד-תמונה"><a class="header" href="#מושגים-בוידאו-ועיבוד-תמונה">מושגים בוידאו ועיבוד תמונה</a></h2>
+<p><strong>פריים</strong>: <br />
+תמונה בודדת מתוך סרטון.</p>
+<p><strong>פיקסל</strong>: <br />
+נקודה בודדת על המסך
+המופיעה בצבע מסוים.</p>
+<p><strong>ערוץ</strong>: <br />
+תמונת גווני אפור המייצגת אספקט סמויים
+של המידע בתמונה. <br />
+למשל,
+ערוץ ה-<strong>R</strong> במרחב <code>RGB</code>
+מייצג את כמות הצבע האדום
+שיש בכל פיקסל ופיקסל.</p>
+<p><strong>מרחב צבעים</strong>: <br />
+דרך לייצג צבעים באופן דיגיטלי,
+המתורגמים לצבעים פיזיים המוצגים על המסך.</p>
+<p><strong>RGB</strong>: <br />
+מרחב צבעים שבו
+כל ערוץ מייצג צבע
+משלושת צבעי היסוד של האור:
+אדום, ירוק וכחול
+(<strong>R</strong>ed, <strong>G</strong>reen, <strong>B</strong>lue).</p>
+<p><strong>RGBA</strong>: <br />
+הרחבה למרחב הצבעים <code>RGB</code>
+ובה ערוץ נוסף המייצג את השקיפות
+(<strong>A</strong>lpha)
+של כל פיקסל.</p>
+<p><strong>YUV</strong>: <br />
+מרחב צבעים מיוחד
+ובו ערוץ המייצג את הבהירות של כל פיקסל בתמונה (<code>luma</code>)
+וערוצים המייצגים את הצבעים בה (<code>chroma</code>).
+ייצוג זה יותר יעיל מבחינת מקום
+ולכן משתמשים בו עבור וידאו דחוס.</p>
+<p><strong>Luma</strong>: <br />
+ערוץ במרחב הצבעים <code>YUV</code>
+המייצג את הבהירות של כל פיקסל בתמונה.
+נקרא גם Y.</p>
+<p><strong>Chroma</strong>: <br />
+ערוצים במרחב הצבעים <code>YUV</code>
+ששילובם מייצג את הצבע של כל פיקסל.
+אפשר לחלק את הערוצים בדרכים שונות,
+כגון <code>Cb</code>,<code>Cr</code>
+או <code>U</code>,<code>V</code>,
+אך בדרך כלל הכוונה
+הכוונה היא לשילוב הערוצים
+שממנו גוזרים את הצבע של כל פיקסל.</p>
+<p><strong>Chroma Subsampling</strong>: <br />
+הקטנת ערוצי ה-<code>chroma</code> באופן מלאכותי
+כדי לחסוך מקום בדחיסת וידאו.
+<a href="https://en.wikipedia.org/wiki/Chroma_subsampling#/media/File:Common_chroma_subsampling_ratios.svg">ראו כאן המחשה</a>.
+הסוג הנפוץ ביותר הוא <code>4:2:0</code>,
+ובו משתמשים אלא אם נאמר אחרת.</p>
+<p><strong>YV12</strong>: <br />
+קיצור מקובל עבור וידאו
+במרחב הצבעים YUV
+עם Chroma Subsampling
+עם 8 ביטים לפיקסל פר ערוץ,
+ביחס
+4:2:0,
+כך כשלכל פיקסל 12 ביט בממוצע
+(8 ל-<code>luma</code>ו-4 ל-<code>chroma</code>).</p>
+<p><strong>קודק (Codec)</strong>: <br />
+פורמט מסוים לייצוג וידאו בצורה דיגיטלית.</p>
+<p><strong>קודק מאבד מידע (Lossy codec)</strong>: <br />
+קודק בו פרטים זניחים
+(שאדם ממוצע לא מבחין בהם)
+נאבדים,
+על מנת לאפשר דחיסה טובה יותר.
+למשל,
+H.264, HEVC ו-AV1.</p>
+<p><strong>קודק משמר מידע (lossless codec)</strong>: <br />
+קודק בו כלל הפרטים בתמונה נשמרים
+(כולל פרטים זניחים),
+במחיר של קבצים גדולים משמעותית.
+למשל,
+Lagarith, UT-Video ו-FFV1.</p>
 <h2 id="טיפוגרפיה-מערבית"><a class="header" href="#טיפוגרפיה-מערבית">טיפוגרפיה מערבית</a></h2>
-<ul>
-<li><strong>סריף (Serif)</strong> -
+<p><strong>סריף (Serif)</strong>: <br />
 מתייחס לסגנון עיצוב שמוסיף לאותיות סיומות שפיציות,
-או לסיומות (לסריפים) עצמן.</li>
-<li><strong>סנס סריף (Sans-serif)</strong> - 
-סגנון עיצוב שלא מכיל אותיות שפיציות.</li>
-<li><strong>סלאב סריף (Slab-serif)</strong> -
+או לסיומות (לסריפים) עצמן.</p>
+<p><strong>סנס סריף (Sans-serif)</strong>: <br />
+סגנון עיצוב שלא מכיל אותיות שפיציות.</p>
+<p><strong>סלאב סריף (Slab-serif)</strong>: <br />
 סגנון עיצוב שמכיל שפיצים (סריפים) בולטים,
-בעלי עובי זהה לעובי האות.</li>
-</ul>
+בעלי עובי זהה לעובי האות.</p>
 <h2 id="טיפוגרפיה-יפנית-1"><a class="header" href="#טיפוגרפיה-יפנית-1">טיפוגרפיה יפנית</a></h2>
 
                     </main>

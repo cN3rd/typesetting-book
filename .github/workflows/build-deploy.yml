@@ -1,16 +1,26 @@
-# the following code is from
-# https://github.com/Irrational-Encoding-Wizardry/guide.encode.moe/blob/f25e55961d0ebfe65eb2226c802296ea327e53b0/.github/workflows/build-deploy.yml
-name: Build (and deploy)
+name: Build and Deploy Book
 
 on:
-  - push
-  - pull_request
-  - workflow_dispatch
+  push:
+    branches: ["main"]
+  pull_request:
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   build:
-    name: Build
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
@@ -18,30 +28,27 @@ jobs:
         uses: peaceiris/actions-mdbook@v1
         with:
           mdbook-version: '0.4.35'
-          # mdbook-version: 'latest'
 
-      - run: mdbook build
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v3
+
+      - name: Build with mdBook
+        run: mdbook build
 
       - name: Create artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-pages-artifact@v2
         with:
-          name: book
-          path: book
+          path: ./book
 
   deploy:
-    name: Deploy
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs: build
-    if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Fetch build artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: book
-
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .
-          cname: guide.encode.moe
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2

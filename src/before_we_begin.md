@@ -45,11 +45,11 @@ After Effects, Photoshop, Illustrator, Mocha Pro וכו'
 כאשר רוצים להתאים את הטקסט עבור כתב יד ספציפי,
 או במקרים שבהם נרצה לעצב הרחבות לשלטים בסצנה.
 
-![](/images/usgai-drop-custom-drawing-01.png)
+![](images/usgai-drop-custom-drawing-01.png)
 *דוגמא להתאמת טקסט עבור כתב יד ספציפי
 (דמעת הארנבת, פרק 4)*
 
-![](/images/usgai-drop-custom-drawing-04.png)
+![](images/usgai-drop-custom-drawing-04.png)
 *דוגמא לתוספת שעיצבנו לשלט קיים
 (דמעת הארנבת, פרק 4)*
 

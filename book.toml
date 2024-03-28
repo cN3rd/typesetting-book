@@ -4,3 +4,8 @@ language = "he"
 multilingual = false
 src = "src"
 title = "מדריך טייפסטינג"
+description = "מדריך לאומנות הטייפסטינג לפנסאב בשפת הקודש"
+
+[output.html]
+git-repository-url = "https://github.com/cN3rd/typesetting-book"
+git-repository-icon = "fa-github"

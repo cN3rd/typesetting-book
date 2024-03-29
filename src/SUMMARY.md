@@ -21,7 +21,9 @@
 # עיצוב טקסט ב-After Effects
 
 - [למה דווקא After Effects?]()
-- [אופן העבודה הבסיסי]()
+- [אופן העבודה הבסיסי](afx/basic_workflow.md)
+  - [שיטות היסטוריות לחיתוך טייפ](afx/typecutting_methods.md)
+  - [חיתוך טייפ בפועל](afx/typecutting_guide.md)
 - [מבוא קצר ל-After Effects]()
 - [עבודה עם טקסט]()
 - [אפקטים בסיסיים]()
